@@ -1,4 +1,3 @@
-import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:yomeanimo/core/config/app_color.dart';
 import 'package:yomeanimo/core/config/app_routes.dart';
