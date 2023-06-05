@@ -48,7 +48,7 @@ class _YMANavBarState extends State<YMANavBar> {
           TextButton(
             onPressed: () => Navigator.pushNamed(context, AppRoutes.profile),
             child: Icon(
-              Icons.share,
+              Icons.person,
               color: currentRoute == AppRoutes.profile ? AppColor.white : AppColor.purple,
               size: 30,
             ),

@@ -5,7 +5,11 @@ import 'package:yomeanimo/presententation/widget/profiles/yma_name_and_professio
 import 'package:yomeanimo/presententation/widget/profiles/yma_profile_photo.dart';
 
 class YMAProfileCard extends StatelessWidget {
-  const YMAProfileCard({required this.index, required this.onTap, required this.currentIndex});
+  const YMAProfileCard({
+    required this.index,
+    required this.onTap,
+    required this.currentIndex,
+  });
   final int index;
   final int currentIndex;
   final VoidCallback onTap;

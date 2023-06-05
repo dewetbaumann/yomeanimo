@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yomeanimo/core/config/app_color.dart';
+import 'package:yomeanimo/core/config/app_images.dart';
 import 'package:yomeanimo/core/config/app_routes.dart';
 import 'package:yomeanimo/core/config/app_text_style.dart';
 import 'package:yomeanimo/presententation/widget/common/buttons/yma_button.dart';
@@ -32,6 +33,11 @@ class WelcomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Image.asset(AppImages.logo, width: 200),
+                  ),
+
                   // Texts: Empieza a buscar, YoMeAnimers, ¿Qué destino te interesa?
                   YMAWelcomeTitle(),
 
