@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yomeanimo/core/config/app_color.dart';
 import 'package:yomeanimo/core/config/app_images.dart';
+import 'package:yomeanimo/core/config/app_routes.dart';
 import 'package:yomeanimo/core/config/app_text_style.dart';
 import 'package:yomeanimo/presententation/widget/common/yma_nav_bar.dart';
 import 'package:yomeanimo/presententation/widget/profiles/yma_button_slider.dart';
@@ -25,10 +26,7 @@ class _ProfilesPageState extends State<ProfilesPage> {
         backgroundColor: AppColor.purple,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Image.asset(
-          AppImages.australia,
-          height: 30,
-        ),
+        title: Image.asset(AppImages.logo, height: 30),
       ),
       body: SafeArea(
         child: Container(
@@ -55,7 +53,11 @@ class _ProfilesPageState extends State<ProfilesPage> {
                     (i) => YMAProfileCard(
                       index: i,
                       currentIndex: currentIndex,
-                      onTap: () => setState(() => currentIndex = i),
+                      onTap: () async {
+                        setState(() => currentIndex = i);
+                        await Future.delayed(const Duration(milliseconds: 250));
+                        Navigator.pushNamed(context, AppRoutes.profile);
+                      },
                     ),
                   ),
                 ),

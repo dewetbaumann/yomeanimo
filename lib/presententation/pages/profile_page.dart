@@ -28,7 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: AppColor.purple,
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Image.asset(AppImages.australia, height: 30),
+        title: Image.asset(AppImages.logo, height: 30),
       ),
       body: SafeArea(
         child: Stack(
@@ -55,8 +55,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           backgroundColor: MaterialStateProperty.all(AppColor.white),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
-                                side: BorderSide(color: AppColor.greyLight2),
-                                borderRadius: BorderRadius.all(Radius.circular(10))),
+                              side: BorderSide(color: AppColor.greyLight2),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
                           ),
                         ),
                         child: Padding(

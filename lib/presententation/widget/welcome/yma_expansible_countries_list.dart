@@ -15,6 +15,8 @@ class _YMAExpansibleCountriesListState extends State<YMAExpansibleCountriesList>
   bool isExpanded = true;
   bool showList = true;
   final duration = Duration(milliseconds: 500);
+  late YMACountryCard currentCountry;
+  List<YMACountryCard> _countries = [];
 
   @override
   void initState() {
@@ -23,6 +25,18 @@ class _YMAExpansibleCountriesListState extends State<YMAExpansibleCountriesList>
       vsync: this,
       duration: duration,
     );
+    for (int i = 0; i < countriesList.length; i++) {
+      final c = YMACountryCard(
+        country: countriesList[i],
+        onTap: () {
+          setState(() => currentCountry = _countries[i]);
+          expandList();
+        },
+      );
+
+      if (i == 0) currentCountry = c;
+      _countries.add(c);
+    }
   }
 
   @override
@@ -34,7 +48,6 @@ class _YMAExpansibleCountriesListState extends State<YMAExpansibleCountriesList>
   @override
   Widget build(BuildContext context) {
     final screen = MediaQuery.of(context).size;
-    final _countries = countriesList.map((c) => YMACountryCard(country: c)).toList();
 
     return AnimatedContainer(
       width: screen.width * .5,
@@ -50,34 +63,18 @@ class _YMAExpansibleCountriesListState extends State<YMAExpansibleCountriesList>
           // last flag
           Visibility(
             visible: !showList,
-            child: _countries.last,
+            child: currentCountry,
           ),
 
           // List of countries
           Visibility(
-            visible: isExpanded,
-            child: Column(
-              children: _countries,
-            ),
+            visible: showList,
+            child: Column(children: _countries),
           ),
 
           // Show list button
           GestureDetector(
-            onTap: () async {
-              if (animationController.isDismissed) {
-                animationController.forward();
-              } else {
-                animationController.reverse();
-              }
-
-              setState(() => isExpanded = !isExpanded);
-              await Future.delayed(duration);
-              // if (!isExpanded) {
-              //   setState(() => showList = false);
-              // } else {  setState(() => showList = !showList); }
-              setState(() => showList = !showList);
-              // await Future.delayed(duration);
-            },
+            onTap: () => expandList(),
             child: Align(
               alignment: AlignmentDirectional.bottomEnd,
               child: Container(
@@ -93,5 +90,23 @@ class _YMAExpansibleCountriesListState extends State<YMAExpansibleCountriesList>
         ],
       ),
     );
+  }
+
+  expandList() async {
+    if (animationController.isDismissed) {
+      animationController.forward();
+    } else {
+      animationController.reverse();
+    }
+
+    await Future.delayed(duration);
+    if (isExpanded) {
+      setState(() => showList = false);
+      setState(() => isExpanded = false);
+    } else {
+      setState(() => isExpanded = true);
+      await Future.delayed(duration);
+      setState(() => showList = true);
+    }
   }
 }
