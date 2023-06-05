@@ -30,34 +30,34 @@ class _YMANavBarState extends State<YMANavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           TextButton(
-            onPressed: () => Navigator.pushNamedAndRemoveUntil(context, AppRoutes.welcome, (_) => false),
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.welcome),
             child: Icon(
               Icons.home,
-              color: currentRoute == AppRoutes.welcome ? AppColor.purple : AppColor.white,
+              color: currentRoute == AppRoutes.welcome ? AppColor.white : AppColor.purple,
               size: 30,
             ),
           ),
           TextButton(
-            onPressed: () => Navigator.pushNamedAndRemoveUntil(context, AppRoutes.profiles, (_) => false),
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.profiles),
             child: Icon(
               Icons.search,
-              color: currentRoute == AppRoutes.profiles ? AppColor.purple : AppColor.white,
+              color: currentRoute == AppRoutes.profiles ? AppColor.white : AppColor.purple,
               size: 30,
             ),
           ),
           TextButton(
-            onPressed: () => Navigator.pushNamedAndRemoveUntil(context, AppRoutes.profile, (_) => false),
+            onPressed: () => Navigator.pushNamed(context, AppRoutes.profile),
             child: Icon(
               Icons.share,
-              color: currentRoute == AppRoutes.profile ? AppColor.purple : AppColor.white,
+              color: currentRoute == AppRoutes.profile ? AppColor.white : AppColor.purple,
               size: 30,
             ),
           ),
           TextButton(
-            onPressed: () {}, // Navigator.pushNamedAndRemoveUntil(context, AppRoutes.welcome, (_) => false);
+            onPressed: () {}, // Navigator.pushNamed(context, AppRoutes.welcome);
             child: Icon(
               Icons.menu_rounded,
-              color: AppColor.white,
+              color: AppColor.purple,
               size: 30,
             ),
           ),
