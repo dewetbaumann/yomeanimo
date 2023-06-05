@@ -45,7 +45,7 @@ El directorio donde se encuentra el código principal de la aplicación escrito 
 
 *Estructura*
 
-
+```
 ┣📦 assets
 ┃ ┣📂 images
 ┣📦 lib
@@ -54,7 +54,7 @@ El directorio donde se encuentra el código principal de la aplicación escrito 
 ┃ ┣📂 device
 ┃ ┣📂 domain
 ┃ ┣📂 ui
-
+```
 
 
 <hr>
@@ -67,12 +67,12 @@ En la carpeta `./services` se encuentra los servicios que requiere el código co
 
 *Estructura*
 
+```
  ┣ 📂core
-
  ┃ ┣ 📂services
  ┃ ┣ 📂styles
  ┃ ┣ 📂utils
-
+```
 
 <hr>
 
@@ -86,7 +86,7 @@ Además, también tenemos la comunicación con el exterior como por ejemplo en l
 
 *Estructura*
 
-
+```
 ┣ 📂data
 ┃ ┣ 📂datasources
 ┃ ┣ 📂fb_analytics
@@ -94,6 +94,7 @@ Además, también tenemos la comunicación con el exterior como por ejemplo en l
 ┃ ┣ 📂keys
 ┃ ┣ 📂models
 ┃ ┣ 📂repositories
+```
 
 
 <hr>
@@ -114,13 +115,14 @@ En la carpeta `./use_case` se encuentra la capa que contiene las reglas que le d
 
 *Estructura*
 
-
+```
  ┣ 📂domain
  ┃ ┣ 📂controllers
  ┃ ┣ 📂entities
  ┃ ┣ 📂repositories
  ┃ ┣ 📂riverpod
  ┃ ┗ 📂use_case
+```
 
 
  <hr>
@@ -136,10 +138,11 @@ En la carpeta `./widgets` se encuentra todos los componentes de cada página, se
 *Estructura*
 
 
+```
  ┣ 📂ui
  ┃ ┣ 📂pages
  ┃ ┗ 📂widgets
-
+```
 
 <hr>
 
@@ -149,9 +152,8 @@ Es la capa encargada de tener los archivos de configuracion del aplicativo, por 
 
 <hr>
 
-> Como conlusion podemos obtner una estructura de la siguiente forma, con la conjuncion de las diferentes capas.
 
-
+```
 📂 lib
 ┣ 📂config
 ┣ 📂core
@@ -172,5 +174,8 @@ Es la capa encargada de tener los archivos de configuracion del aplicativo, por 
 ┣ 📂ui
 ┃ ┣ 📂pages
 ┃ ┗ 📂widgets
+```
+
+> Como conlusion podemos obtener una estructura de la siguiente forma, con la conjuncion de las diferentes capas.
 
 <hr>
